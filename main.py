@@ -177,7 +177,7 @@ def live_matches():
     
     
     return jsonify(live_matches)
-
+<div id="player-rankings"></div>
 @app.route('/')
 def website():
     return render_template('index.html')
