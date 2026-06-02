@@ -17,6 +17,9 @@ from flask import jsonify
 @app.route('/api/player-ranking')
 def player_ranking():
 
+    url = "https://..."
+
+
     url = "https://cricket-live-line1.p.rapidapi.com/playerRanking/1"
 
     headers = {
