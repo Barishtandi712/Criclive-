@@ -279,14 +279,12 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
-        .player-1-card {
+         .player-1-card {
             border-right: none;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-        
-        .player-2-card {
+         .player-2-card {
             border-left: none;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -304,8 +302,7 @@
                  class="me-2">
             CRICLIVE
         </a>
-
-        <button class="navbar-toggler" type="button"
+   <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -350,14 +347,17 @@
             </div>
         </div>
     </nav>
-
-    <!-- Search Section -->
+ <!-- Search 
+    Section -->
     <div class="search-container" id="search">
         <div class="container search-content">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h1 class="display-4 mb-4">Cricket Hub</h1>
-                    <p class="lead mb-4">Your one-stop destination for live scores, player stats, and match schedules</p>
+                    <img src="{{ url_for('static', filename='images/logo.png') }}"
+                        alt="CRICLIVE Logo
+                        class="img-fluid mb-4
+                        style="max-width:300px;">
+                    
                     <div class="input-group mb-3">
                         <input type="text" id="playerSearch" class="form-control form-control-lg" 
                                placeholder="Search player..." 
