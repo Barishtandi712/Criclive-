@@ -20,7 +20,7 @@ def player_ranking():
     url = "https://cricket-live-line1.p.rapidapi.com/playerRanking/1"
 
     headers = {
-        "x-rapidapi-key": "c6f8ccdc59msh889422d443a83ecp1465f4jsnb077d5acf95e"
+        "x-rapidapi-key": "c6f8ccdc59msh889422d443a83ecp1465f4jsnb077d5acf95e",
         "x-rapidapi-host": "cricket-live-line1.p.rapidapi.com"
     }
 
