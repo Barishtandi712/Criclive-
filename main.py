@@ -10,7 +10,23 @@ from googlesearch import search #pip install googlesearch-python
 from flask import render_template
 
 app = Flask(__name__)
+import os
+import requests
+from flask import jsonify
 
+@app.route('/api/player-ranking')
+def player_ranking():
+
+    url = "https://cricket-live-line1.p.rapidapi.com/playerRanking/1"
+
+    headers = {
+        "x-rapidapi-key": "c6f8ccdc59msh889422d443a83ecp1465f4jsnb077d5acf95e"
+        "x-rapidapi-host": "cricket-live-line1.p.rapidapi.com"
+    }
+
+    response = requests.get(url, headers=headers)
+
+    return jsonify(response.json())
 
 @app.route('/players/<player_name>', methods=['GET'])
 def get_player(player_name):
