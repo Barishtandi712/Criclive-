@@ -1,8 +1,9 @@
 from flask import Flask, jsonify
 from bs4 import BeautifulSoup
 import requests
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -19,13 +20,21 @@ def live_matches():
             "User-Agent": "Mozilla/5.0"
         }
 
-        response = requests.get(link, headers=headers)
-        page = BeautifulSoup(response.text, "html.parser")
+response = requests.get(link, headers=headers, timeout=20)
+response.raise_for_status()
 
-        return jsonify({
-            "status": "success",
-            "html_length": len(response.text)
-        })
+page = BeautifulSoup(response.text, "html.parser")
+
+        matches = []
+
+for match in page.find_all("div", class_="cb-scr-wll-chvrn"):
+    matches.append(match.get_text(" ", strip=True))
+
+return jsonify({
+    "status": "success",
+    "matches": matches
+ }
+        
 
     except Exception as e:
         return jsonify({
