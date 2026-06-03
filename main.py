@@ -9,7 +9,7 @@ CORS(app)
 def home():
     return jsonify({
         "status": "running"
-    })
+    }
 
 @app.route('/live')
 def live_matches():
