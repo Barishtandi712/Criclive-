@@ -1,6 +1,7 @@
 Flask
 requests
 beautifulsoup4
+flask-cors
 googlesearch-python
 lxml
 gunicorn
