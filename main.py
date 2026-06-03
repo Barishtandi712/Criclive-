@@ -31,11 +31,11 @@ def live_matches():
             matches.append(match.get_text(" ", strip=True))
 
         return jsonify({
-            "status": "success",
-            "matches": matches
-        })
+    "status": "success",
+    "matches": matches
+})
 
-    except Exception as e:
-        return jsonify({
-            "error": str(e)
-        }), 500
+except Exception as e:
+    return jsonify({
+        "error": str(e)
+    }), 500
