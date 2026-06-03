@@ -9,7 +9,7 @@ CORS(app)
 def home():
     return jsonify({
         "status": "running"
-    }
+    })
 
 @app.route('/live')
 def live_matches():
@@ -34,7 +34,7 @@ def live_matches():
         for match in page.find_all("div", class_="cb-mtch-lst"):
             matches.append(match.get_text(" ", strip=True))
 
-        return jsonify({
+        return jsonify({ 
             "status": "success",
             "matches": matches
         })
