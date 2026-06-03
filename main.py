@@ -1,4 +1,4 @@
-⁸from flask import Flask, jsonify
+from flask import Flask, jsonify
 from bs4 import BeautifulSoup
 import requests
 from flask_cors import CORS
