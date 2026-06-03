@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+⁸from flask import Flask, jsonify
 from bs4 import BeautifulSoup
 import requests
 from flask_cors import CORS
@@ -34,7 +34,7 @@ def live_matches():
         for match in page.find_all("div", class_="cb-mtch-lst"):
             matches.append(match.get_text(" ", strip=True))
 
-        return jsonify({ 
+        return jsonify({
             "status": "success",
             "matches": matches
         })
