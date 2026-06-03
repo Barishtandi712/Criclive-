@@ -25,9 +25,8 @@ return jsonify({
     "status": "success",
     "html_length": len(response.text)
 })
-        })
-
-    except Exception as e:
-        return jsonify({
+        
+except Exception as e:
+    return jsonify({
             "error": str(e)
         }), 500
