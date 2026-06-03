@@ -19,14 +19,15 @@ def live_matches():
             "User-Agent": "Mozilla/5.0"
         }
 
-page = BeautifulSoup(response.text, "html.parser")
+        response = requests.get(link, headers=headers)
+        page = BeautifulSoup(response.text, "html.parser")
 
-return jsonify({
-    "status": "success",
-    "html_length": len(response.text)
-})
-        
-except Exception as e:
-    return jsonify({
+        return jsonify({
+            "status": "success",
+            "html_length": len(response.text)
+        })
+
+    except Exception as e:
+        return jsonify({
             "error": str(e)
         }), 500
